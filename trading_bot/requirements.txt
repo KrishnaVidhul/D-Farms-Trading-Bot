@@ -1,0 +1,18 @@
+torch --extra-index-url https://download.pytorch.org/whl/cpu
+transformers
+yfinance
+requests
+pandas
+numpy
+schedule
+lxml
+ta
+streamlit
+streamlit-autorefresh
+plotly
+groq
+openai
+python-dotenv
+psycopg2-binary
+SQLAlchemy
+pytz

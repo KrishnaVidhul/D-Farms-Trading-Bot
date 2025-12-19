@@ -1,0 +1,22 @@
+#cloud-config
+package_update: true
+package_upgrade: true
+
+packages:
+  - docker.io
+  - docker-compose
+  - python3-pip
+  - git
+
+write_files:
+  - path: /root/.env
+    content: |
+      TELEGRAM_TOKEN=${telegram_token}
+      CHAT_ID=${chat_id}
+    permissions: '0600'
+
+runcmd:
+  - systemctl enable docker
+  - systemctl start docker
+  - usermod -aG docker ubuntu
+  - echo "ARM Ampere A1 instance provisioned successfully" > /var/log/provision.log
